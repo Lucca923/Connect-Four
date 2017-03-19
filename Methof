@@ -1,0 +1,59 @@
+  
+    //gets number of connected pieces
+    public int getConnect(int[][] board, int n){
+        public int col = 0;
+        public int count = 1;
+        for(int j = 0; j < board.length; j++)
+            for(int k = 0; k< board.length; k++){
+                if(board[j][k] == n){
+                
+                    //CHECKS ABOVE
+                    for (int i = 0; i < 7; i++){
+                        if(board[j+i][k] == n)
+                            count++;
+                        else if(board[j+i][k] == 0)
+                            break;
+                        else{
+                            count = 0;
+                            break;
+                        }
+                    }
+                    
+                    //CHECK RIGHT
+                    for (int i = 0; i < 6; i++){
+                        if(board[j][k+i] == n)
+                            count++;
+                        else if(board[j][k+i] == 0)
+                            break;
+                        else{
+                            count = 0;
+                            break;
+                        }
+                    }
+                
+                    //CHECK DIAG LEFT
+                    for (int i = 0; i < k; i++){
+                        if(board[j+i][k-i] == n)
+                            count++;
+                        else if(board[j+i][k-i] == 0)
+                            break;
+                        else{
+                            count = 0;
+                            break;
+                        }
+                    }
+                
+                    //CHECK DIAG RIGHT
+                    for (int i = 0; i < k; i++){
+                        if(board[j+i][k+i] == n)
+                            count++;
+                        else if(board[j+i][k+i] == 0)
+                            break;
+                        else{
+                            count = 0;
+                            break;
+                        }
+                    }
+                }
+            }
+    }
