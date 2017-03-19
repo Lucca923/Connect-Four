@@ -77,6 +77,13 @@
                     }
                 }
             }
+            return 5;
     }
-getConnect(board[][], 2, 3)
-if 
+if (getConnect(board[][], 2, 3) != 5)
+  MAKES THE COMPUTER MOVE THE RETURN STATEMENT
+else if(getConnect(board[][], 1, 3) != 5)
+  MAKES THE COMPUTER MOVE THE RETURN STATEMENT
+else if(getConnect(board[][], 2, 2) != 5)
+  MAKES THE COMPUTER MOVE THE RETURN STATEMENT
+else
+  DOES THE RANDOM METHOD
