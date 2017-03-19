@@ -3,6 +3,7 @@
     public int getConnect(int[][] board, int n){
         public int col = 0;
         public int count = 1;
+        public bool isThree = false;
         for(int j = 0; j < board.length; j++)
             for(int k = 0; k< board.length; k++){
                 if(board[j][k] == n){
@@ -11,6 +12,11 @@
                     for (int i = 0; i < 7; i++){
                         if(board[j+i][k] == n)
                             count++;
+                            if(count == 3){
+                              isThree = true;
+                              col = k;
+                              return col;
+                            }
                         else if(board[j+i][k] == 0)
                             break;
                         else{
@@ -22,7 +28,12 @@
                     //CHECK RIGHT
                     for (int i = 0; i < 6; i++){
                         if(board[j][k+i] == n)
-                            count++;
+                            count++;    
+                            if(count == 3){
+                              isThree = true;
+                              col = k + 3;
+                              return col;
+                            }
                         else if(board[j][k+i] == 0)
                             break;
                         else{
@@ -35,6 +46,11 @@
                     for (int i = 0; i < k; i++){
                         if(board[j+i][k-i] == n)
                             count++;
+                            if(count == 3){
+                              isThree = true;
+                              col = k - 3;
+                              return col;
+                            }
                         else if(board[j+i][k-i] == 0)
                             break;
                         else{
@@ -46,7 +62,12 @@
                     //CHECK DIAG RIGHT
                     for (int i = 0; i < k; i++){
                         if(board[j+i][k+i] == n)
-                            count++;
+                            count++;    
+                            if(count == 3){
+                              isThree = true;
+                              col = k + 3;
+                              return col;
+                            }
                         else if(board[j+i][k+i] == 0)
                             break;
                         else{
