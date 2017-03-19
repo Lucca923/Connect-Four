@@ -1,6 +1,6 @@
   
     //gets number of connected pieces
-    public int getConnect(int[][] board, int n){
+    public int getConnect(int[][] board, int n, int x){
         public int col = 0;
         public int count = 1;
         public bool isThree = false;
@@ -9,10 +9,10 @@
                 if(board[j][k] == n){
                 
                     //CHECKS ABOVE
-                    for (int i = 0; i < 7; i++){
+                    for (int i = 1; i < 4; i++){
                         if(board[j+i][k] == n)
                             count++;
-                            if(count == 3){
+                            if(count == x){
                               isThree = true;
                               col = k;
                               return col;
@@ -26,12 +26,12 @@
                     }
                     
                     //CHECK RIGHT
-                    for (int i = 0; i < 6; i++){
+                    for (int i = 1; i < 4; i++){
                         if(board[j][k+i] == n)
                             count++;    
-                            if(count == 3){
+                            if(count == x){
                               isThree = true;
-                              col = k + 3;
+                              col = k + x;
                               return col;
                             }
                         else if(board[j][k+i] == 0)
@@ -43,12 +43,12 @@
                     }
                 
                     //CHECK DIAG LEFT
-                    for (int i = 0; i < k; i++){
+                    for (int i = 1; i < k; i++){
                         if(board[j+i][k-i] == n)
                             count++;
-                            if(count == 3){
+                            if(count == x){
                               isThree = true;
-                              col = k - 3;
+                              col = k - x;
                               return col;
                             }
                         else if(board[j+i][k-i] == 0)
@@ -60,12 +60,12 @@
                     }
                 
                     //CHECK DIAG RIGHT
-                    for (int i = 0; i < k; i++){
+                    for (int i = 1; i < k; i++){
                         if(board[j+i][k+i] == n)
                             count++;    
-                            if(count == 3){
+                            if(count == x){
                               isThree = true;
-                              col = k + 3;
+                              col = k + x;
                               return col;
                             }
                         else if(board[j+i][k+i] == 0)
@@ -78,3 +78,5 @@
                 }
             }
     }
+getConnect(board[][], 2, 3)
+if 
